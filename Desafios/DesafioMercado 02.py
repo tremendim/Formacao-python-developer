@@ -1,24 +1,13 @@
+def calcular_garrafas(n, k):
+    garrafas_cheias = n // k
+    garrafas_sobrando = n % k
+    total_garrafas = garrafas_cheias + garrafas_sobrando
 
-# T = numero de casos de teste
+    return total_garrafas
 
-# print("Digite a quantidade de casos")
-T = int(input())
-
-#N e K (1 ≤ K, N ≤ 10000),  respectivamente o número de refrigerantes comprados e o número de garrafas vazias
-# K = Quantidade de garrafas compradas no primeiro dia
-# N = Quantidade de garrafas vazia que precisa para ganhar 1 cheia
-
-for cont in range(T):
-    K = int(input())
-    N = int(input())
-    if K >= 1 and N <= 10000:
-        garrafasRetornadas = K/N
-        saldo = K-N
-        total = garrafasRetornadas + saldo
-        #Comando para desconsidera as casas decimais após a virgula
-        totalSVirgula = round(total,0)
-        print(totalSVirgula)
-        
-    cont = cont+1
-
-
+# Entrada de dados
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    resultado = calcular_garrafas(n, k)
+    print(resultado)
